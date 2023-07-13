@@ -294,9 +294,7 @@ class DatamatrixFactory
 		$h = $bcd['num_rows'] * $scale->size;
 
 		$repstr = array("\0" => '', '&' => '&amp;', '<' => '&lt;', '>' => '&gt;');
-		$datamatrixData = '<'.'?'.'xml version="1.0" standalone="no"'.'?'.'>'."\n";
-		$datamatrixData .= '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">'."\n";
-		$datamatrixData .= '<svg width="'.$this->size.'" height="'.$this->size.'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">'."\n";
+		$datamatrixData = '<svg width="'.$this->size.'" height="'.$this->size.'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">'."\n";
 		$datamatrixData .= "\t".'<desc>'.strtr($bcd['code'], $repstr).'</desc>'."\n";
 
 		if ($this->margin > 0) {
