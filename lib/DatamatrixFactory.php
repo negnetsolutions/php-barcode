@@ -345,18 +345,18 @@ class DatamatrixFactory
 	public function renderHTML()
 	{
 		$datamatrixData = $this->getDatamatrixHtmlData();
-		return $datamatrixData;
+		print $datamatrixData;
 	}
 
 	public function renderPNG()
 	{
 		$datamatrixData = $this->getDatamatrixPngData();
-		return $datamatrixData;
+		print $datamatrixData;
 	}
 
 	public function renderSVG()
 	{
 		$datamatrixData = $this->getDatamatrixSvgData();
-		return $datamatrixData;
+		print $datamatrixData;
 	}
 }
