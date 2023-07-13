@@ -345,36 +345,18 @@ class DatamatrixFactory
 	public function renderHTML()
 	{
 		$datamatrixData = $this->getDatamatrixHtmlData();
-
-		header('Content-Type: text/html');
-		header('Content-Length: '.strlen($datamatrixData));
-		header('Cache-Control: no-cache');
-		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-
-		echo $datamatrixData;
+		return $datamatrixData;
 	}
 
 	public function renderPNG()
 	{
 		$datamatrixData = $this->getDatamatrixPngData();
-
-		header('Content-Type: image/png');
-		header('Content-Length: '.strlen($datamatrixData));
-		header('Cache-Control: no-cache');
-		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');			
-			
-		echo $datamatrixData;
+		return $datamatrixData;
 	}
 
 	public function renderSVG()
 	{
 		$datamatrixData = $this->getDatamatrixSvgData();
-		
-		header('Content-Type: image/svg+xml');
-		header('Content-Length: '.strlen($datamatrixData));
-		header('Cache-Control: no-cache');
-		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');	
-
-		echo $datamatrixData;
+		return $datamatrixData;
 	}
 }
