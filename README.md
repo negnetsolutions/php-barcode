@@ -1,4 +1,4 @@
-[![Packagist Downloads](https://img.shields.io/packagist/dt/jucksearm/php-barcode.svg)](https://packagist.org/packages/jucksearm/php-barcode) [![Stable version](https://img.shields.io/packagist/v/jucksearm/php-barcode.svg)](https://packagist.org/packages/jucksearm/php-barcode) [![License](https://img.shields.io/packagist/l/jucksearm/php-barcode.svg)](https://packagist.org/packages/jucksearm/php-barcode)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/jucksearm/php-barcode.svg)](https://packagist.org/packages/jucksearm/php-barcode) [![Stable version](https://img.shields.io/packagist/v/jucksearm/php-barcode.svg)](https://packagist.org/packages/negnetsolutions/php-barcode) [![License](https://img.shields.io/packagist/l/jucksearm/php-barcode.svg)](https://packagist.org/packages/negnetsolutions/php-barcode)
 
 This is a barcode generation package inspired by [Nicola Asuni](https://github.com/tecnickcom/TCPDF). Actually I use that package's underline classes for generating barcode. This package is just a wrapper of that package and adds compatibility with PHP >= 5.4
 
@@ -24,15 +24,15 @@ This package require [php-gd](http://php.net/manual/en/book.image.php) extension
 Begin by installing this package through Composer. Just run following command to terminal:
 
 ```
-composer require jucksearm/php-barcode
+composer require negnetsolutions/php-barcode
 ```
 
-You can also edit your project's `composer.json` file to require `jucksearm/php-barcode`.
+You can also edit your project's `composer.json` file to require `negnetsolutions/php-barcode`.
 
 ```
 "require": {
     ...
-    "jucksearm/php-barcode": "^1.0"
+    "negnetsolutions/php-barcode": "^1.0"
 }
 ```
 
@@ -45,7 +45,7 @@ composer update
 ```php
 use jucksearm\barcode\Barcode;
 
-Barcode::html('https://github.com/jucksearm/php-barcode', 'C128');
+Barcode::html('https://github.com/negnetsolutions/php-barcode', 'C128');
 ```
 ## How to Use Advance
 ```php
