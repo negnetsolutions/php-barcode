@@ -225,6 +225,8 @@ class Datamatrix
 		if ((is_null($code)) OR ($code == '\0') OR ($code == '')) {
 			return false;
 		}
+		// Assert that $code is a string
+		$code = (string) $code;
 		// get data codewords
 		$cw = $this->getHighLevelEncoding($code);
 		// number of data codewords
