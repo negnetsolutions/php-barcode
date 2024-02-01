@@ -222,10 +222,11 @@ class Datamatrix
 	 */
 	public function __construct($code) {
 		$barcode_array = array();
-		if ((is_null($code)) OR ($code == '\0') OR ($code == '')) {
+		// assert that $code is a valid string
+		$code = $this->safeStringCast($code);
+		if (!$code) {
 			return false;
 		}
-		// Assert that $code is a string
 		$code = (string) $code;
 		// get data codewords
 		$cw = $this->getHighLevelEncoding($code);
