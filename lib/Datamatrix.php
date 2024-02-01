@@ -222,7 +222,9 @@ class Datamatrix
 	 */
 	public function __construct($code) {
 		$barcode_array = array();
-		if ((is_null($code)) OR ($code == '\0') OR ($code == '')) {
+		// assert that $code is a valid string
+		$code = $this->safeStringCast($code);
+		if (!$code) {
 			return false;
 		}
 		// get data codewords
@@ -1156,6 +1158,28 @@ class Datamatrix
 			$marr[(($nrow * $ncol) - $ncol - 2)] = 1;
 		}
 		return $marr;
+	}
+
+	/**
+	 * Safely casts a variable to a string, unless it's an array, object, boolean, null, or empty.
+	 *
+	 * This function checks the type and content of the provided data. It returns false for null values,
+	 * booleans, arrays, objects, empty strings, or strings containing only a null character ('\0').
+	 * For other types (like integers, floats), or strings that do not fall into the above categories,
+	 * it casts them to a string and returns the result.
+	 *
+	 * @param mixed $code The variable to be cast to a string.
+	 * @return string|false Returns a string representation of the input data if it can be
+	 *                      safely converted to a string, or false otherwise.
+	 */
+	protected function safeStringCast($code) {
+		// Check for invalid values
+		if ((is_null($code)) OR ($code == '\0') OR ($code == '') OR is_bool($code) OR is_array($code) OR is_object($code)) {
+			return false;
+		}
+
+		// Default: cast to string for other types like integers, floats, etc.
+		return (string) $code;
 	}
 
 } // end DataMatrix class
