@@ -227,7 +227,6 @@ class Datamatrix
 		if (!$code) {
 			return false;
 		}
-		$code = (string) $code;
 		// get data codewords
 		$cw = $this->getHighLevelEncoding($code);
 		// number of data codewords
